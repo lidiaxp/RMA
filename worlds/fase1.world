@@ -3,7 +3,7 @@
 <sdf version="1.5">
   <world name="default">
     <!-- <plugin name="mrs_gazebo_ros_link_attacher_plugin" filename="libmrs_gazebo_ros_link_attacher.so"/> -->
-    <plugin name="mrs_gazebo_static_transform_republisher_plugin" filename="libMRSGazeboStaticTransformRepublisher.so"/>
+    <!-- <plugin name="mrs_gazebo_static_transform_republisher_plugin" filename="libMRSGazeboStaticTransformRepublisher.so"/> -->
       
     <!-- coordinate system {-->
     <spherical_coordinates>

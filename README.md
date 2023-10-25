@@ -1,14 +1,15 @@
 # RMA
 
-This package works together with MRS System. It is a easy to simulate UAVs and Multi UAVs considering your real kinematics.
+This package works together with the MRS System. 
 
-## Build Status    
-| Component 	       |  20.04              | 
-| ------------------- | ------------------- |
-| RMA 	             | ![image](https://user-images.githubusercontent.com/74054598/149457205-fd48db89-0658-4511-af36-bcd8662562da.png)|
+### Dependencies   
+| Operational System 	         |  Ubuntu 20.04            | 
+| ---------------------------- | ------------------------ |
+| ROS 	                       | ![image](https://user-images.githubusercontent.com/74054598/149457205-fd48db89-0658-4511-af36-bcd8662562da.png)|
+| MRS System 	                 | Native installation      | 
+| Gazebo    	                 | Gazebo multi-robot simulator - version 11.13.0     | 
 
-
-Features 
+Features
 
    - UAV
    - Multi UAV
@@ -19,34 +20,16 @@ Features
    - Real-sense D-435
 
 
-## Step 1 - Instal MRS System
-
-Follow the instructions [here](https://github.com/ctu-mrs/mrs_uav_system#installation) (on Installation topic) to install MRS System or use the commands:
+## Step 1 - Upload class's package
 
 ```bash 
-cd /tmp
-echo '
-GIT_PATH=~/git
-mkdir -p $GIT_PATH
-cd $GIT_PATH
-sudo apt-get -y install git
-git clone https://github.com/ctu-mrs/mrs_uav_system
-cd mrs_uav_system
-git checkout master
-git pull
-./install.sh -g $GIT_PATH
-source ~/.bashrc' > clone.sh && source clone.sh
-```
-
-## Step 2 - Upload class's package
-
-```bash 
-cd ~/workspace/src git clone https://github.com/vivaldini.git 
+cd ~/workspace/src 
+git clone https://github.com/vivaldini/RMA.git 
 catkin build 
-bash ../devel/setup.bash/RMA
+bash ../devel/setup.bash
 ```
 
-## Step 3 - Setting Gazebo
+## Step 2 - Setting Gazebo
 
 Start Gazebo by entering the following at the command prompt.
 
@@ -54,13 +37,13 @@ Start Gazebo by entering the following at the command prompt.
 gazebo
 ```
 
-Click in Edit -> Model Editor
+Click on Edit -> Model Editor
 
 Click in File -> Save as
 
 Save the model in the Location: /workspace/src/RMA/models.
 
-### Step 4
+### Step 3
 
 To add the directory to models and worlds:
 
@@ -70,22 +53,22 @@ To add the directory to models and worlds:
    - Choose the paste ~/workspace/src/RMA/models
    - Close gazebo
 
-### Step 5 - Test the environment
+### Step 4 - Test the environment
 
 - UAV
 ```bash 
 cd
-bash workspace/src/RMA/src/start/start.sh
+bash ~/workspace/src/RMA/src/start/start.sh
 ```
 
 - Multi UAVs run
 
 ```bash
   cd
-  bash ~/workspace/src/robotica_movel/src/start/multiStart.sh
+  bash ~/workspace/src/RMA/src/start/multiStart.sh
 ```
 
-### Step 6: Use algorithms and information available from MRS
+### Step 5: Use algorithms and information available from MRS
 
 Repository 1: https://ctu-mrs.github.io/docs/system/uav_ros_interface.html#uavmanager
 
@@ -115,10 +98,10 @@ tmux kill-server
 Communication with the MRS will be done through ROS. If you are not yet aware, it is interesting to carry out the tutorial 1.1.1 to 1.1.18 link: http://wiki.ros.org/ROS/Tutorials
 
 ## Note:
-    1. In the course, we will see ROS, but it is important for improving your expertise to do the tutorials. That will be passed as Frequency Activities.
+    1. We will see ROS in the course, but it is important to improve your expertise to do the tutorials. That will be passed as Frequency Activities.
     2. The scenario was developed by @lidiaxp.
 
     
 ## Support
 
-For support send email vivaldini@ufscar.br
+For support, send email to vivaldini@ufscar.br
